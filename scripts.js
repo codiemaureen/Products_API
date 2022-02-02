@@ -17,12 +17,23 @@ async function handleSubmit(e){
   e.preventDefault();
   const el = e.currentTarget;
   //turn the form off
-  form.submit.disabled = false;
+  el.submit.disabled = false;
   //submitting the search
   const recipes = await fetchRecipes(el.query.value);
-  console.log(recipes);
+  displayRecipes(recipes.products);
 
-  console.table(el.query.value);
+};
+
+function displayRecipes(recipes){
+  console.log('Creating HTML');
+  const html = recipes.map(recipe =>  `
+      <div>
+        <h2>${recipe.title}<h2>
+        <p>${recipe.ingredients}</p>
+        ${recipe.thumbnail && `<img src="${recipe.thumbnail}" alt="${recipe.title}"/>`}
+      </div>`
+  );
+  console.log(html);
 };
 
 form.addEventListener('submit', handleSubmit);
