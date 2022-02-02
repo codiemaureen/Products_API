@@ -1,0 +1,24 @@
+{
+  "name": "recipe-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codiemaureen/Recipe_API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codiemaureen/Recipe_API/issues"
+  },
+  "homepage": "https://github.com/codiemaureen/Recipe_API#readme",
+  "browserslist": "last 1 Chrome version",
+  "dependencies": {
+    "dotenv": "^15.0.0",
+    "parcel-bundler": "^1.12.5"
+  }
+}
