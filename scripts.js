@@ -4,6 +4,7 @@ const form = document.querySelector('form.search');
 const recipesGrid = document.querySelector('.recipes');
 require('dotenv').config('env');
 
+
 async function fetchRecipes(query){
   const res = await fetch(`${proxy}${baseEndpoint}search?query=${query}&apiKey=${process.env.API_KEY}`, {
     //converts data to JSON
@@ -28,6 +29,7 @@ async function fetchAndDisplay(query){
   //submitting the search
   const recipes = await fetchRecipes(query);
   console.log(recipes);
+  //turn the form on
   form.submit.disabled = false;
   displayRecipes(recipes.products);
   
@@ -41,6 +43,7 @@ function displayRecipes(recipes){
         ${recipe.image && `<img src="${recipe.image}" alt="${recipe.title}"/>`}
       </div>`
   );
+  //displaying Products as a grid
   recipesGrid.innerHTML = html.join(' ');
 };
 
