@@ -6,6 +6,7 @@ require('dotenv').config('env');
 
 
 async function fetchRecipes(query){
+  //response
   const res = await fetch(`${proxy}${baseEndpoint}search?query=${query}&apiKey=${process.env.API_KEY}`, {
     //converts data to JSON
     headers: {
@@ -46,6 +47,8 @@ function displayRecipes(recipes){
   //displaying Products as a grid
   recipesGrid.innerHTML = html.join(' ');
 };
+
+
 
 form.addEventListener('submit', handleSubmit);
 //Display product on page load
