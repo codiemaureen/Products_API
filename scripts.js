@@ -6,6 +6,7 @@ require('dotenv').config('env');
 
 async function fetchRecipes(query){
   const res = await fetch(`${proxy}${baseEndpoint}search?query=${query}&apiKey=${process.env.API_KEY}`, {
+    //converts data to JSON
     headers: {
       Accept: 'application/json',
     }
@@ -20,6 +21,7 @@ async function handleSubmit(e){
 
 };
 
+//displays products on page load
 async function fetchAndDisplay(query){
     //turn the form off
   form.submit.disabled = true;
