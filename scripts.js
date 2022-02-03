@@ -20,20 +20,20 @@ async function handleSubmit(e){
   el.submit.disabled = false;
   //submitting the search
   const recipes = await fetchRecipes(el.query.value);
+  console.log(recipes);
   displayRecipes(recipes.products);
 
 };
 
 function displayRecipes(recipes){
-  console.log('Creating HTML');
-  const html = recipes.map(recipe =>  `
-      <div>
-        <h2>${recipe.title}<h2>
-        <p>${recipe.ingredients}</p>
-        ${recipe.thumbnail && `<img src="${recipe.thumbnail}" alt="${recipe.title}"/>`}
-      </div>`
-  );
-  console.log(html);
+  console.log('Creating the HTML');
+  // const html = recipes.map(recipe =>  `
+  //     <div>
+  //       <h2>${recipe.title}<h2>
+  //       <image>${recipe.image}</p>
+  //     </div>`
+  // );
+  // console.log(html);
 };
 
 form.addEventListener('submit', handleSubmit);
