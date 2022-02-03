@@ -16,20 +16,24 @@ async function fetchRecipes(query){
 
 async function handleSubmit(e){
   e.preventDefault();
-  const el = e.currentTarget;
-  //turn the form off
-  el.submit.disabled = true;
-  //submitting the search
-  const recipes = await fetchRecipes(el.query.value);
-  console.log(recipes);
-  el.submit.disabled = false;
-  displayRecipes(recipes.products);
+  fetchAndDisplay(form.query.value);
 
+};
+
+async function fetchAndDisplay(query){
+    //turn the form off
+  form.submit.disabled = true;
+  //submitting the search
+  const recipes = await fetchRecipes(query);
+  console.log(recipes);
+  form.submit.disabled = false;
+  displayRecipes(recipes.products);
+  
 };
 
 function displayRecipes(recipes){
   console.log('Creating the HTML');
-  const html = recipes.map(recipe =>  `
+  const html = recipes.map((recipe) =>  `
       <div>
         <h2>${recipe.title}<h2>
         ${recipe.image && `<img src="${recipe.image}" alt="${recipe.title}"/>`}
@@ -39,4 +43,5 @@ function displayRecipes(recipes){
 };
 
 form.addEventListener('submit', handleSubmit);
-fetchRecipes('pizza');
+//Display product on page load
+fetchAndDisplay('Strawberry');
