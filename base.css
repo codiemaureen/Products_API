@@ -86,10 +86,6 @@ th {
 .wrapper {
   box-shadow: 0 0 3px 5px rgba(0, 0, 0, 0.08653);
 }
-a {
-  color: var(--blue);
-  text-decoration-color: var(--yellow);
-}
 
 a.button,
 button,
@@ -118,9 +114,4 @@ select {
   display: block;
   padding: 1rem;
   border: 1px solid var(--grey);
-}
-
-.wrapper {
-  color: var(--black);
-  text-shadow: none;
 }
