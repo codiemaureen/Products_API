@@ -30,12 +30,7 @@ textarea {
 /* Variables */
 html {
   --grey: #e7e7e7;
-  --gray: var(--grey);
-  --blue: #99b2dd;
   --pink: #806068;
-  --yellow: #fcebb3;
-  --black: #2e2e2e;
-  --red: #782236;
   --green: #5a7d7c;
   --text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
   --box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
