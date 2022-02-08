@@ -56,12 +56,6 @@ table {
   border-collapse: collapse;
 }
 
-td,
-th {
-  border: 1px solid var(--grey);
-  padding: 0.5rem;
-}
-
 /* Helper Divs */
 
 .wrapper {
@@ -71,20 +65,13 @@ th {
   background: white;
 }
 
-.box,
-.wrapper {
-  box-shadow: 0 0 3px 5px rgba(0, 0, 0, 0.08653);
-}
-
 a.button,
 button,
 input[type="button"] {
   color: white;
   background: var(--pink);
   padding: 1rem;
-  border: 0;
   border: 2px solid transparent;
-  text-decoration: none;
   font-weight: 600;
   font-size: 2rem;
 }

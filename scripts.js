@@ -1,8 +1,11 @@
+
 const baseEndpoint = `https://api.spoonacular.com/food/products/`;
 const proxy = `https://cors-anywhere.herokuapp.com/`
 const form = document.querySelector('form.search');
 const productsGrid = document.querySelector('.products');
-require("dotenv").config();
+
+import dotenv from 'dotenv';
+dotenv.config()
 
 
 async function fetchProducts(query){
@@ -36,12 +39,13 @@ async function fetchAndDisplay(query){
   
 };
 
+
 function displayProducts(products){
   console.log('Creating the HTML');
   const html = products.map((product) =>  `
       <div>
-        <h2>${recipe.title}<h2>
-        ${recipe.image && `<img src="${recipe.image}" alt="${recipe.title}"/>`}
+        <h2>${product.title}<h2>
+        ${product.image && `<img src="${product.image}" alt="${product.title}"/>`}
       </div>`
   );
   //displaying Products as a grid
