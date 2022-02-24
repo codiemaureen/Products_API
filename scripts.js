@@ -4,8 +4,7 @@ const proxy = `https://cors-anywhere.herokuapp.com/`
 const form = document.querySelector('form.search');
 const productsGrid = document.querySelector('.products');
 
-import dotenv from 'dotenv';
-dotenv.config()
+require('dotenv').config();
 
 
 async function fetchProducts(query){
@@ -26,13 +25,16 @@ async function handleSubmit(e){
 
 };
 
+
 //displays products on page load
 async function fetchAndDisplay(query){
+  if(form.submit.disabled === true){
+      alert('Must Unlock Temporary Access in Console');
+  };
     //turn the form off
   form.submit.disabled = true;
   //submitting the search
   const products = await fetchProducts(query);
-  console.log(products);
   //turn the form on
   form.submit.disabled = false;
   displayProducts(products.products);
@@ -41,7 +43,6 @@ async function fetchAndDisplay(query){
 
 
 function displayProducts(products){
-  console.log('Creating the HTML');
   const html = products.map((product) =>  `
       <div>
         <h2>${product.title}<h2>
@@ -57,3 +58,4 @@ function displayProducts(products){
 form.addEventListener('submit', handleSubmit);
 //Display product on page load
 fetchAndDisplay('Strawberry');
+
