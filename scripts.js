@@ -17,6 +17,8 @@ async function fetchProducts(query){
   return data;
 };
 
+
+
 async function handleSubmit(e){
   e.preventDefault();
   fetchAndDisplay(form.query.value);
@@ -26,7 +28,9 @@ async function handleSubmit(e){
 
 //displays products on page loads
 async function fetchAndDisplay(query){
+  //turn the form off
   form.submit.disabled = true
+  //waiting for product search
   const products = await fetchProducts(query);
   //turn the form on
   form.submit.disabled = false;
