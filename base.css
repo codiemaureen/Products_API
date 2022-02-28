@@ -47,8 +47,6 @@ body {
   background-size: 15px;
 }
 
-/* Table Styles */
-
 table {
   border-radius: 5px;
   overflow: hidden;
@@ -61,7 +59,6 @@ th {
   border: 1px solid var(--grey);
   padding: 0.5rem;
 }
-/* Helper Divs */
 
 .wrapper {
   max-width: 1000px;
