@@ -24,7 +24,6 @@ async function handleSubmit(e){
 };
 
 
-
 //displays products on page loads
 async function fetchAndDisplay(query){
   form.submit.disabled = true

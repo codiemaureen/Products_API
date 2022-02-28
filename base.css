@@ -23,9 +23,6 @@ textarea {
 
 /* Variables */
 html {
-  --grey: #e7e7e7;
-  --pink: #806068;
-  --green: #5a7d7c;
   --text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
   --box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
   font-size: 62.5%;
@@ -43,7 +40,7 @@ html {
 body {
   font-size: 2rem;
   line-height: 1.5;
-  background-color: var(--green);
+  background-color: #5a7d7c;
   background-size: 15px;
 }
 
@@ -75,7 +72,7 @@ a.button,
 button,
 input[type="button"] {
   color: white;
-  background: var(--pink);
+  background: #806068;
   padding: 1rem;
   margin-bottom: 10px;
   border: 2px solid transparent;
@@ -92,5 +89,5 @@ textarea,
 select {
   display: block;
   padding: 1rem;
-  border: 1px solid var(--grey);
+  border: 1px solid #e7e7e7;
 }
